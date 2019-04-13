@@ -9,7 +9,7 @@ class Profile(models.Model):
   age = models.IntegerField(default=18)
   university = models.CharField(max_length=100, default='')
   department = models.CharField(max_length=50, default='')
-  image = models.ImageField( upload_to='profile_image', blank=True)
+  #image = models.ImageField( upload_to='profile_image', blank=True)
 
 
 # @receiver(post_save, sender=User)
@@ -31,7 +31,7 @@ class Moderator(models.Model):
     return self.name
 
 class Subforum(models.Model):
-  subforum_name = models.CharField(max_length=50)
+  subforum_name = models.CharField(max_length=50,unique=True)
   subforum_description = models.TextField(blank=True, null=True)
   users = models.ManyToManyField(User)
   mods = models.ManyToManyField(Moderator)
