@@ -4,7 +4,7 @@ Subforum/{{ subforum.subforum_name }}
 {% endblock %}
 {% block body %}
 
-    <h3>Subforum {{subforum.subforum_id}} : {{subforum.subforum_name}}</h1>
+    <h3>Subforum {{subforum.subforum_id}} : {{subforum.subforum_name}}</h3>
     <h3>{{subforum.ques_count}}</h3>
 <br>
 
@@ -13,20 +13,20 @@ Subforum/{{ subforum.subforum_name }}
         {% for q in question %}
             <a href="{% url 'jmiforums:view_question' subforum.subforum_name q.id %}"><li>{{ q.ques_text }}</li></a>
         {% empty %}
-            <li>No question!</li>    
+            <li>No question!</li>
         {% endfor %}
     </ul>
 
     <a href="{% url 'jmiforums:question' subforum.subforum_name %}">Ask Question</a>
 
-    <div class="border-top pt-3"> 
+    <div class="border-top pt-3">
         <small class="text-muted">
             <h4>Moderators</h4>
             <ul>
                 {% for mod in moderator %}
                     <li>{{ mod }}</li>
                 {% empty %}
-                    <li>No mods.</li>    
+                    <li>No mods.</li>
                 {% endfor %}
             </ul>
         </small>

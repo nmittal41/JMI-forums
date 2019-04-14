@@ -28,9 +28,9 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <a class="nav-link" href="{% url 'jmiforums:profile' %}">Profile</a>
-        </li>
+        </li> -->
         <li>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -38,7 +38,7 @@
           </form>
         </li>
       </ul>
-
+      <a class="nav-link" href="{% url 'jmiforums:profile' %}">Profile</a>
       <a class="btn btn-primary" href="{% url 'jmiforums:logout' %}" role="button">Logout</a>
 
     </div>

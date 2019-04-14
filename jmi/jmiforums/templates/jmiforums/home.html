@@ -25,13 +25,13 @@ Home Page
         {% for q in questions %}
             <a href="{% url 'jmiforums:view_question' q.subforum_id.subforum_name q.id %}"><li>{{ q.ques_text }}</li></a>
         {% empty %}
-            <li>No question!</li>    
+            <li>No question!</li>
         {% endfor %}
       </ul>
     </div>
     <div class="col-md-3">
       {% comment %} Add ask question link {% endcomment %}
-      <a href="{% url 'jmiforums:instant_question' %}"><h2>Add a question</h2></a>
+      <a href="{% url 'jmiforums:instant_question' %}"><h2>Ask Question</h2></a>
     </div>
 
   </div>

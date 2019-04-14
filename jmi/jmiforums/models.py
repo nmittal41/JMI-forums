@@ -3,10 +3,11 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.utils import timezone
 from django.dispatch import receiver
+import datetime
 
 class Profile(models.Model):
   user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-  age = models.IntegerField(default=18)
+  birth_date = models.DateField(("Date-of-Birth"),default=datetime.date.today)
   university = models.CharField(max_length=100, default='')
   department = models.CharField(max_length=50, default='')
   #image = models.ImageField( upload_to='profile_image', blank=True)
@@ -66,4 +67,4 @@ class Comment(models.Model):
   user_id = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
   ques_id = models.ForeignKey(Question, on_delete=models.CASCADE)
   comment_text = models.TextField()
-  comment_date = models.DateTimeField(default=timezone.now)  
+  comment_date = models.DateTimeField(default=timezone.now)
